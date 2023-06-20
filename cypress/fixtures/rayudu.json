@@ -1,0 +1,12 @@
+{
+    "A":{
+        "username":"Admin",
+        "password":"admin123"
+    },
+    "B":{
+        "username":"xyz",
+        "password":"xyz123"
+        
+
+    }
+}
