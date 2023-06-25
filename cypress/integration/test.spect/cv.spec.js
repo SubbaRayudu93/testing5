@@ -11,7 +11,7 @@ describe('', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/')
         loginPage.currentLoginPage(userinfo.A);
     })
-    it('', () => {
+    it.only('', () => {
         // cy.visit('https://opensource-demo.orangehrmlive.com/')
         // loginPage.currentLoginPage(userinfo.a);
         cy.visit('https://opensource-demo.orangehrmlive.com/')
@@ -28,6 +28,21 @@ describe('', () => {
     it('allcheckboxes', () => {
         cy.visit('https://artoftesting.com/sampleSiteForSelenium')
         loginPage.checkBoxes(userinfo);
+        //loginPage.dropDown2(userinfo.a);
+    })
+    it('', () => {
+        cy.visit('https://petstore.swagger.io/')
+        loginPage.newProject(userinfo);
+        //loginPage.dropDown2(userinfo.a);
+    })
+    it('', () => {
+        cy.visit('https://opensource-demo.orangehrmlive.com/')
+        loginPage.orangeHrm(userinfo.A);
+        //loginPage.dropDown2(userinfo.a);
+    })
+    it.only('', () => {
+        cy.visit('https://opensource-demo.orangehrmlive.com/')
+        loginPage.orangeHrm1(userinfo.A);
         //loginPage.dropDown2(userinfo.a);
     })
 })
