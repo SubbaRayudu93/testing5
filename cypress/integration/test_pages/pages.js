@@ -89,14 +89,15 @@ export class LoginPage {
         for (let i = 0; i < 10; i++) {
             cy.visit('https://opensource-demo.orangehrmlive.com/')
             cy.get('[name="username"]').type(userinfo.username);
+            cy.wait(4500)
             cy.get('[type="password"]').type(userinfo.password);
             cy.get('[type="submit"]').click();
             
-            const dropdown = cy.get('[class="oxd-userdropdown-name"]');
-            dropdown.click();
-            const optionValue = 'Logout';
-            cy.contains('a[role="menuitem"]', optionValue).click();
-            dropdown.should('be.visible', optionValue);
+            // const dropdown = cy.get('[class="oxd-userdropdown-name"]');
+            // dropdown.click();
+            // const optionValue = 'Logout';
+            // cy.contains('a[role="menuitem"]', optionValue).click();
+            // dropdown.should('be.visible', optionValue);
 
 
 
@@ -108,15 +109,15 @@ export class LoginPage {
         describe('Login and Logout', () => {
             const loginData = [
                 { username: 'Admin', password: 'admin123' },
-                { username: 'user2', password: 'password2' },
-                { username: 'user3', password: 'password3' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' },
-                { username: 'Admin', password: 'admin123' }
+                { username: 'Admin', password: 'password2' },
+                { username: 'user3', password: 'admin123' },
+                { username: 'Admin1', password: 'admin1231' },
+                { username: ' ', password: 'admin123' },
+                { username: 'Admin', password: ' ' },
+                { username: ' ', password: ' ' },
+                // { username: 'Admin', password: 'admin123' },
+                // { username: 'Admin', password: 'admin123' },
+                // { username: 'Admin', password: 'admin123' }
 
             ];
 
@@ -128,19 +129,25 @@ export class LoginPage {
                     cy.get('[name="username"]').type(userinfo.username);
                     cy.get('[type="password"]').type(userinfo.password);
                     cy.get('[type="submit"]').click();
+                    cy.get('[type="submit"]').then((welcome)=>{
+                        const dropdown = cy.get('[class="oxd-userdropdown-name"]');
+                        dropdown.click();
+                        const optionValue = 'Logout';
+                        cy.contains('a[role="menuitem"]', optionValue).click()
+                            
+                    })
 
-
-                    const dropdown = cy.get('[class="oxd-userdropdown-name"]');
-                    dropdown.click();
-                    const optionValue = 'Logout';
-                    cy.contains('a[role="menuitem"]', optionValue).click();
-                    dropdown.should('be.visible', optionValue);
+                    
+                    
+                    
+                    
                 });
             });
         });
 
 
     }
+    login
 
 
 

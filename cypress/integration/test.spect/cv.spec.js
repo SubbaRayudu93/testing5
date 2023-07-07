@@ -11,7 +11,7 @@ describe('', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/')
         loginPage.currentLoginPage(userinfo.A);
     })
-    it.only('', () => {
+    it('', () => {
         // cy.visit('https://opensource-demo.orangehrmlive.com/')
         // loginPage.currentLoginPage(userinfo.a);
         cy.visit('https://opensource-demo.orangehrmlive.com/')

@@ -26,6 +26,9 @@ class Senario1 {
         //cy.wait(5000);
         cy.get('[class="oxd-input oxd-input--active"]').eq(1).type('asdf');
         cy.get('[placeholder="Type description here"]').type('ajdkdfjdih');
+        const imageFile = "24sachin1.jpg";
+        cy.contains('Browse').attachFile(imageFile)
+
 
     }
 
